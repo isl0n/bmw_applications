@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      // Настроим маршруты
+
       routes: {
         '/': (context) => ProductListScreen(),
         '/details': (context) => ProductListScreen(),
@@ -119,7 +119,6 @@ class ProductListScreen extends StatelessWidget {
           final car = products[index];
           return GestureDetector(
             onTap: () {
-              // Переход на детальный экран с передачей объекта продукта
               Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -187,7 +186,7 @@ class ProductListScreen extends StatelessWidget {
 }
 
 class ProductDetailScreen extends StatelessWidget {
-  final Product product; // Получаем переданный объект продукта
+  final Product product; 
 
   const ProductDetailScreen({Key? key, required this.product}) : super(key: key);
 
@@ -202,9 +201,9 @@ class ProductDetailScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Добавляем AspectRatio для управления соотношением сторон изображения
+            
             AspectRatio(
-              aspectRatio: 16 / 9, // Устанавливаем соотношение сторон (16:9)
+              aspectRatio: 16 / 9, 
               child: Image.asset(
                 product.imageUrl,
                 fit: BoxFit.cover,
